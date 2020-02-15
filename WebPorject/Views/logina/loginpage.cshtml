@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "loginpage";
+}
+
+<!DOCTYPE html>
+<html itemscope="" itemtype="http://schema.org/WebPage" lang="fa-IR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../css/froala_editor.pkgd.min.css">
+    @Styles.Render("~/Content/css")
+    <script src="~/lib/jquery/nicEdit.js"></script>
+</head>
+<body>
+
+    <div class="col-lg-2">
+        <ul class="nav nav-pills nav-stacked show-ul" style="left: 1009.5px;right: -3px;top: 2px;">
+            <li id="_newpost"><a href="newpost">پست جدید</a></li>
+            <li id="_showpost"><a href="showpost">نمایش پست ها</a></li>
+        </ul>
+    </div>
+
+    <div style="margin-right: 15%;">
+
+        @RenderBody()
+
+    </div>
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+
+</body>
+</html>
+

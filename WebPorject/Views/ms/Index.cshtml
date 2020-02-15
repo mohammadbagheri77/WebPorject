@@ -1,0 +1,25 @@
+﻿@model WebPorject.Models.postpage
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/master/masterpage.cshtml";
+}
+
+
+@foreach (var item in ViewBag.Tit)
+{
+    <div class="jumbotron" style="margin-top: 50px;margin-left: 200px;margin-right: 200px;">
+        <div class="C-post">
+            <div class="CenterPost">
+                <div>  <h3>@item.name </h3>   </div>
+
+                <div style="background-image:url(@item.image); background-repeat:no-repeat; background-position:center center; height: 400px; width: 600px;">
+                </div>
+                <br>
+                <div id="show_text" style="max-width:100%;">@Html.Raw(@item.text)</div>
+                <br>
+                <b><a href="@Url.Action("post","ms",new {id=@item.id })">ادامه مطلب</a></b>
+                <br>
+            </div>
+        </div>
+    </div>
+}

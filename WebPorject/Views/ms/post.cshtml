@@ -1,0 +1,61 @@
+﻿@model WebPorject.Models.postpage
+@{
+    ViewBag.Title = "post";
+    Layout = "~/Views/master/masterpage.cshtml";
+}
+
+@foreach (var item in ViewBag.post)
+{
+    ViewBag.Ti= item.id;
+    <div class="jumbotron" style="margin-top: 50px;margin-left: 200px;margin-right: 200px;">
+        <div class="C-post">
+            <div class="CenterPost">
+                <div style="background-image:url(@item.image); background-repeat:no-repeat; background-position:center center;  height: 400px; width: 600px;">
+                </div>
+                <p style="text-align:right; color:red">@item.name</p>
+                <div>@Html.Raw(@item.text)</div>       
+            </div>
+        </div>
+    </div>
+}
+
+@using (Html.BeginForm("GetUser","ms",FormMethod.Post ))
+{
+<div class="jumbotron" style="margin-top: 50px;margin-left: 200px;margin-right: 200px;">
+    <div class="form-horizontal" style="padding-left: 16px;" id="MAINPOSTERGETER">
+        <fieldset>
+            <legend>نظرات</legend>
+            <div class="form-group">
+                <label for="inputEmail" class="col-lg-2 control-label">نام و نام خانوادگی</label>
+                <div class="col-lg-10">
+                    @Html.TextBoxFor(m => m.name, new { @class = "form-control", required = "required", type = "text" })
+
+                    <label class="control-label" id="error1" style="color: red" for="inputError"></label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputEmail" class="col-lg-2 control-label">ایمیل</label>
+                <div class="col-lg-10">
+                    @Html.TextBoxFor(m => m.image, new { @class = "form-control", required = "required", type = "email" })
+                    <label class="control-label" id="error1" style="color: red" for="inputError"></label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputEmail" class="col-lg-2 control-label">نظرات</label>
+                <div class="col-lg-10">
+                    @Html.TextBoxFor(m => m.text, new { @class = "form-control", required = "required", type = "text" })
+                    <label class="control-label" id="error1" style="color: red" for="inputError"></label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-lg-12 col-md-8 col-xs-6 col-xl-6">
+                    <button type="submit" class="btn btn-primary w-100">ثبت نظر</button>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+</div>
+}

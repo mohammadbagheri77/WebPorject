@@ -1,0 +1,24 @@
+﻿@font-face {
+    font-family: 'IRZar';
+    src: url('../../fonts/IRZar.ttf') format('truetype');
+}
+* {
+    font-family: 'IRZar';
+}
+
+.w-100{
+    width:100%
+}
+
+
+
+.show-ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 15%;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
