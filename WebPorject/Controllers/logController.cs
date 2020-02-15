@@ -13,7 +13,7 @@ namespace WebPorject.Controllers
 {
     public class logController : Controller
     {
-        ///////////////////////////////////////// user
+        /////////////////////////////////////////// user
         [HttpGet]
         public new ActionResult User()
         {
